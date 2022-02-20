@@ -24,6 +24,14 @@ set noshowmode
 au BufNewFile,BufRead *.html set filetype=htmldjango
 lua require'colorizer'.setup()
 
+"" Salir de modo edicion
+inoremap jj <Esc>
+inoremap kk <Esc>
+inoremap dd <Esc>
+
+"" habilitar transparencia
+hi Normal guibg=NONE ctermbg=NONE
+
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
