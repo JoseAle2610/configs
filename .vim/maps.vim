@@ -10,7 +10,7 @@ nnoremap <Leader>> 10<C-w>>
 nnoremap <Leader>< 10<C-w><
 
 " quick semi
-nnoremap <Leader>; $a;<Esc>
+nnoremap <Leader>, $a;<Esc>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>q :q<CR>

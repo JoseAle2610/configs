@@ -28,6 +28,7 @@ lua require'colorizer'.setup()
 inoremap jj <Esc>
 inoremap kk <Esc>
 inoremap dd <Esc>
+inoremap ,, <Esc>$a;
 
 "" habilitar transparencia
 hi Normal guibg=NONE ctermbg=NONE

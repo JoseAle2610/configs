@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec mate-terminal
+#bindsym $mod+Return exec mate-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -128,7 +128,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+Shift+m exec dm-tool lock
 
@@ -181,17 +181,38 @@ bar {
 client.focused #333333 #333333 #333333 #333333
 
 # espaciados de las ventanas
-gaps outer 5
-gaps inner 7 
+gaps outer 2
+gaps inner 2 
 smart_gaps on
 
 # Quitar marco a todas las ventanas
 for_window [class="^.*"] border pixel 2
 
 # ejecutar picom para transparencia y feh para background
-exec feh --bg-fill /home/ro/wallpapers/gruvbox/dead-robot.jpg
+exec feh --bg-fill /home/ro/wallpapers/gruvbox/waterfall2.jpg
 exec picom -b &
 exec blueman-report
 # alt tab shurcut
+bindsym $mod+Tab workspace back_and_forth
+#border_radius 5
 
-bindsym $mod+Tab workspace back_and_forth+
+# Abrir nueva terminal en la ultima carpeta
+bindsym $mod+Return exec mate-terminal --working-directory=$(cat /tmp/whereami)
+
+
+# Create Log out, Reboot, Poweroff bindings
+mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
+        bindsym $mod+r exec systemctl reboot
+        bindsym $mod+l exit
+        bindsym $mod+p exec systemctl poweroff
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+e mode "Exit (L)ogout, (R)eboot, (P)oweroff"
+
+# open programs
+bindsym $mod+c exec caja $HOME
+bindsym $mod+b exec firefox
