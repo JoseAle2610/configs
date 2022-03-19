@@ -29,6 +29,7 @@ inoremap jj <Esc>
 inoremap kk <Esc>
 inoremap dd <Esc>
 inoremap ,, <Esc>$a;
+nnoremap ,, $a;
 
 "" habilitar transparencia
 hi Normal guibg=NONE ctermbg=NONE
