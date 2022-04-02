@@ -189,7 +189,7 @@ smart_gaps on
 for_window [class="^.*"] border pixel 2
 
 # ejecutar picom para transparencia y feh para background
-exec feh --bg-fill /home/ro/wallpapers/gruvbox/waterfall2.jpg
+exec feh --bg-fill /home/ro/wallpapers/gruvbox/tank.jpg
 exec picom -b &
 exec blueman-report
 # alt tab shurcut
@@ -197,7 +197,7 @@ bindsym $mod+Tab workspace back_and_forth
 #border_radius 5
 
 # Abrir nueva terminal en la ultima carpeta
-bindsym $mod+Return exec mate-terminal --working-directory=$(cat /tmp/whereami)
+bindsym $mod+Return exec mate-terminal -e 'tmux' --working-directory=$(cat /tmp/whereami)
 
 
 # Create Log out, Reboot, Poweroff bindings
