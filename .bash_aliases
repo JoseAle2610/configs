@@ -1,3 +1,4 @@
 alias h='history | grep'
-alias ll='ls -la'
+alias ll='lsd -la'
 alias la='ls -a'
+alias cat='batcat'

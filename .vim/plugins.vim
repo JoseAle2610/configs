@@ -1,5 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
+" Live server
+Plug 'turbio/bracey.vim'
+
 " syntax
 Plug 'sheerun/vim-polyglot'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
@@ -43,7 +46,7 @@ Plug 'yggdroot/indentline'
 Plug 'scrooloose/nerdcommenter'
 
 " git
-Plug 'tpope/vim-fugitive'
+"Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-repeat'
 

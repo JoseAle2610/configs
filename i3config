@@ -165,16 +165,16 @@ bar {
         position top
         status_command i3blocks
         colors {
-		#background #222222ff
+    #background #222222ff
                 background #343434
-		            statusline #eeeeee
-		            separator #666666
-           	    #                  border  backgr. text
-		            focused_workspace  #444444 #444444 #ffb52a
-		            active_workspace   #333333 #5f676a #ffffff
-		            inactive_workspace #333333 #222222 #888888
-		            urgent_workspace   #2f343a #900000 #ffffff
-	      }
+                statusline #eeeeee
+                separator #666666
+                 #                  border  backgr. text
+                focused_workspace  #444444 #444444 #ffb52a
+                active_workspace   #333333 #5f676a #ffffff
+                inactive_workspace #333333 #222222 #888888
+                urgent_workspace   #2f343a #900000 #ffffff
+        }
 }
 
 # bordes de cada ventana
@@ -189,22 +189,27 @@ smart_gaps on
 for_window [class="^.*"] border pixel 2
 
 # ejecutar picom para transparencia y feh para background
-exec feh --bg-fill /home/ro/wallpapers/gruvbox/tank.jpg
+exec feh --bg-fill /home/alex/wallpapers/gruvbox/tank.jpg
 exec picom -b &
-exec blueman-report
+
+bindsym $mod+x exec --no-startup-id setxkbmap latam
+
+#exec mate-panel
 # alt tab shurcut
 bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Control+l workspace next
+bindsym $mod+Control+h workspace prev
 #border_radius 5
 
 # Abrir nueva terminal en la ultima carpeta
-bindsym $mod+Return exec mate-terminal -e 'tmux' --working-directory=$(cat /tmp/whereami)
+bindsym $mod+Return exec setxkbmap latam && mate-terminal -e 'tmux' --working-directory=$(cat /tmp/whereami)
 
 
 # Create Log out, Reboot, Poweroff bindings
 mode "Exit (L)ogout, (R)eboot, (P)oweroff" {
         bindsym $mod+r exec systemctl reboot
         bindsym $mod+l exit
-        bindsym $mod+p exec systemctl poweroff
+        bindsym $mod+p exec poweroff
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
