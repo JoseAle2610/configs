@@ -25,8 +25,8 @@ set noshowmode
 
 let NERDTreeMapOpenInTab='<TAB>'
 
-au BufNewFile,BufRead *.html set filetype=htmldjango
-lua require'colorizer'.setup()
+"" au BufNewFile,BufRead *.html set filetype=htmldjango
+"" lua require'colorizer'.setup()
 
 "" Salir de modo edicion
 inoremap jj <Esc>
@@ -41,4 +41,6 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+
+let g:coc_disable_startup_warning = 1
 

@@ -1,0 +1,73 @@
+// Zed keymap
+//
+// For information on binding keys, see the Zed
+// documentation: https://zed.dev/docs/key-bindings
+//
+// To see the default key bindings run `zed: open default keymap`
+// from the command palette.
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      // "shift shift": "file_finder::Toggle"
+      "ctrl-j": "terminal_panel::Toggle"
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {}
+  },
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j j": "vim::SwitchToNormalMode",
+      "k k": "vim::SwitchToNormalMode",
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste"
+    }
+  },
+  {
+    "context": "VimControl",
+    "bindings": {
+      "ctrl-j": "terminal_panel::Toggle",
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "ctrl-c": "editor::Copy",
+      "ctrl-s": "workspace::Save",
+      "ctrl-v": "editor::Paste",
+      "ctrl-x": "editor::Cut",
+      "ctrl-f": "buffer_search::Deploy",
+      "ctrl-y": "editor::Redo",
+      "tab": "editor::Indent",
+      "shift-tab": "editor::Outdent",
+      "space j": "pane::GoBack",
+      "space k": "pane::GoForward",
+      "ctrl-a": "editor::SelectAll",
+      "g f": "editor::FindAllReferences"
+
+      // {
+      //             "before": ["leader", "j"],
+      //             "commands": ["workbench.action.navigateBack"]
+      //             // "after": ["<C-o>", "<Esc>"]
+      //         },
+      //         {
+      //             "before": ["leader", "k"],
+      //             "commands": ["workbench.action.navigateForward"]
+      //             // "after": ["<C-i>"]
+      //         }
+    }
+  },
+  {
+    "context": "vim_mode == normal",
+    "bindings": {
+      "space c": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "vim_mode == visual",
+    "bindings": {
+      "space c": "editor::ToggleComments",
+      "ctrl-c": "editor::Copy"
+    }
+  }
+]
