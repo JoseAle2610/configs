@@ -1,9 +1,9 @@
 binds {
     // Application Launchers
-    Mod+Space hotkey-overlay-title="Application Launcher" {
+    Alt+Space hotkey-overlay-title="Application Launcher" {
         spawn "dms" "ipc" "call" "spotlight" "toggle";
     }
-    Mod+Shift+V hotkey-overlay-title="Clipboard Manager" {
+    Super+V hotkey-overlay-title="Clipboard Manager" {
         spawn "dms" "ipc" "call" "clipboard" "toggle";
     }
     Mod+M hotkey-overlay-title="Task Manager" {

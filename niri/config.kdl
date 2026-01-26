@@ -329,6 +329,18 @@ window-rule {
     open-floating true
 }
 
+// Always start kitty maximized so it behaves like a proper terminal.
+window-rule {
+    match app-id=r#"kitty$"#
+    open-maximized-to-edges true
+    
+}
+window-rule {
+    match app-id=r#"Spotify$"#
+    open-maximized-to-edges true
+    
+}
+
 // Example: block out two password managers from screen capture.
 // (This example rule is commented out with a "/-" in front.)
 /-window-rule {
@@ -348,9 +360,9 @@ window-rule {
     clip-to-geometry true
 }
 
-window-rule {
-    open-maximized-to-edges true
-}
+/*window-rule {*/
+    /*open-maximized-to-edges true*/
+/*}*/
 
 binds {
     // Keys consist of modifiers separated by + signs, followed by an XKB key name
