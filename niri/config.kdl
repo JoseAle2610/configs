@@ -336,6 +336,10 @@ window-rule {
     
 }
 window-rule {
+    match app-id=r#"Slack$"#
+    open-maximized-to-edges true
+}
+window-rule {
     match app-id=r#"Spotify$"#
     open-maximized-to-edges true
     
