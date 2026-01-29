@@ -333,7 +333,12 @@ window-rule {
 window-rule {
     match app-id=r#"kitty$"#
     open-maximized-to-edges true
-    
+    opacity 0.9
+}
+window-rule {
+    match app-id=r#"Visual Studio Code$"#
+    open-maximized-to-edges true
+    opacity 0.9
 }
 window-rule {
     match app-id=r#"Slack$"#
@@ -342,7 +347,6 @@ window-rule {
 window-rule {
     match app-id=r#"Spotify$"#
     open-maximized-to-edges true
-    
 }
 
 // Example: block out two password managers from screen capture.

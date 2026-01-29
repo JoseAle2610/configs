@@ -1,6 +1,6 @@
 {
+  "theme": "gruvbox",
   "$schema": "https://opencode.ai/config.json",
-  "theme": "gentleman",
   "autoupdate": true,
   "mcp": {
     "context7": {
