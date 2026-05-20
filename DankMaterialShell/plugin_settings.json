@@ -1,0 +1,9 @@
+{
+  "dankPomodoroTimer": {
+    "enabled": true
+  },
+  "dankActions": {
+    "enabled": true,
+    "variants": []
+  }
+}

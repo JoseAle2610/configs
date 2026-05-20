@@ -1,12 +1,16 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run `zed: open default settings` from the
-// command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "diff_view_style": "unified",
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "cli_default_open_behavior": "existing_window",
+  "ensure_final_newline_on_save": false,
+  "remove_trailing_whitespace_on_save": false,
+  "agent_servers": {
+    "opencode": {
+      "type": "registry"
+    }
+  },
   "tabs": {
     "file_icons": false,
     "git_status": true
@@ -18,8 +22,13 @@
   "tab_size": 4,
   "hard_tabs": false,
   "format_on_save": "off",
+  "autosave": "on_focus_change",
+  "buffer_font_weight": 100,
+  "buffer_font_size": 14,
+  "ui_font_size": 14,
   "agent": {
-    "always_allow_tool_actions": true,
+    "dock": "left",
+    "flexible": true,
     "default_model": {
       "provider": "zed.dev",
       "model": "gemini-2.5-pro"
@@ -76,18 +85,19 @@
     "show": "auto"
   },
   "vim_mode": true,
-  "relative_line_numbers": false,
-  "ui_font_size": 14,
-  "buffer_font_size": 14,
-
-  // Configuración específica de Vim en Zed
+  "relative_line_numbers": "disabled",
   "vim": {
-    "use_system_clipboard": "always"
+    "use_system_clipboard": "always",
+    "toggle_relative_line_numbers": false
+  },
+  "project_panel": {
+    "dock": "right",
+    "default_width": 240
   },
   "theme": {
     "mode": "dark",
     "light": "Gruvbox Light",
-    "dark": "Kanagawa Wave"
+    "dark": "Gruvbox Dark"
   },
   "lsp": {
     "basedpyright": {
@@ -101,5 +111,10 @@
   },
   "debugger": {
     "log_dap_communications": true
+  },
+  "command_aliases": {
+    "W": "w",
+    "Wq": "wq",
+    "Q": "q"
   }
 }

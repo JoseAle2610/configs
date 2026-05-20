@@ -5,7 +5,7 @@ set clipboard=unnamed
 syntax on
 set showcmd
 set ruler
-set cursorline
+"set cursorline
 set encoding=utf-8
 set showmatch
 set termguicolors
@@ -16,9 +16,8 @@ so ~/.vim/plugins.vim
 so ~/.vim/plugin-config.vim
 so ~/.vim/maps.vim
 
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
-highlight Normal ctermbg=NONE
+"colorscheme gruvbox
+"highlight Normal ctermbg=NONE
 set laststatus=2
 set noshowmode
 "" nerd tree, open file in tab

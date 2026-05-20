@@ -1,0 +1,112 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+" Source your .vimrc
+source ~/.vimrc
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+"" -- Insert mode escape sequences (same as Zed) --
+" jj and kk to exit insert mode
+imap jj <Esc>
+imap kk <Esc>
+
+"" -- Leader key configuration --
+" Use space as leader key (same as Zed config)
+set mapleader=<Space>
+
+"" -- Map IDE actions to IdeaVim --
+
+" File operations
+map <leader>w <Action>(SaveAll)
+map <leader>q <Action>(CloseProject)
+
+" Navigation
+map <C-p> <Action>(GotoFile)
+map <leader>f <Action>(GotoFile)
+map <leader>j <Action>(Back)
+map <leader>k <Action>(Forward)
+map <leader>t <Action>(GotoSymbol)
+map <leader>o <Action>(OpenFile)
+
+" Search and references
+map gf <Action>(FindUsages)
+map <leader>/ <Action>(FindInPath)
+map <leader>g <Action>(GotoImplementation)
+
+" Code actions and comments
+map <leader>c <Action>(CommentByLineComment)
+map <leader>gi <Action>(ShowIntentionActions)
+
+" Splits and layout
+map <leader>v <Action>(SplitVertically)
+map <leader>vd <Action>(SplitHorizontally)
+map <leader>nt <Action>(ActivateProjectToolWindow)
+map <leader>0 <Action>(HideAllWindows)
+
+" Breakpoints and debug
+map <leader>b <Action>(ToggleLineBreakpoint)
+map <leader>d <Action>(Debug)
+
+" Visual selection helpers (same as Zed)
+map <leader>( vi(
+map <leader>{ vi{
+map <leader>[ vi[
+map <leader>" vi"
+map <leader>' vi'
+
+" Command palette
+map > <Action>(GotoAction)
+
+" Folding
+map s <Action>(EditorCollapse)
+
+" Quick word movement (5 words at a time)
+map E 5e
+map B 5b
+
+" Move lines in visual mode
+vmap J <Action>(EditorMoveLineDown)
+vmap K <Action>(EditorMoveLineUp)
+
+" Terminal toggle
+map <C-j> <Action>(ActivateTerminalToolWindow)
+
+" Undo/Redo selection
+map <C-u> <Action>(EditorUndo)
+
+" Select next occurrence (multi-cursor)
+map <C-d> <Action>(EditorAddCaretPerSelection)
+
+" Select all matches
+map <C-S-l> <Action>(SelectAllOccurrences)
+
+" Toggle comments with ctrl-k style
+map <C-k><C-c> <Action>(CommentByLineComment)
+map <C-k><C-u> <Action>(CommentByLineComment)
+
+" Indent/outdent
+map <Tab> >>
+map <S-Tab> <<
+
+" Command aliases (same as Zed)
+command W w
+command Wq wq
+command Q q

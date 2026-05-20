@@ -1,0 +1,13 @@
+{
+  "id": "corsairBattery",
+  "name": "Corsair Battery",
+  "description": "Display battery level of Corsair headsets via headsetcontrol",
+  "version": "1.0.0",
+  "author": "jsuarez",
+  "icon": "headset",
+  "type": "widget",
+  "component": "./CorsairBattery.qml",
+  "settings": "./CorsairBatterySettings.qml",
+  "permissions": ["settings_read", "settings_write", "process"],
+  "requires": ["headsetcontrol"]
+}

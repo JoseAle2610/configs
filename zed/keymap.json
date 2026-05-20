@@ -1,73 +1,97 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
   {
-    "context": "Workspace",
+    "context": "Workspace || Editor",
     "bindings": {
-      // "shift shift": "file_finder::Toggle"
       "ctrl-j": "terminal_panel::Toggle"
     }
   },
   {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {}
+    "context": "Editor && !menu",
+    "bindings": {
+      "ctrl-f": "buffer_search::Deploy",
+      "ctrl-c": "editor::Copy",
+      "ctrl-v": "editor::Paste",
+      "ctrl-x": "editor::Cut",
+      "ctrl-s": "workspace::Save",
+      "ctrl-z": "editor::Undo",
+      "ctrl-y": "editor::Redo",
+      "ctrl-a": "editor::SelectAll",
+      "ctrl-d": ["editor::SelectNext", { "replace_newest": false }],
+      "ctrl-n": "workspace::NewFile",
+      "ctrl-t": "project_symbols::Toggle",
+      "ctrl-o": "workspace::Open",
+      "ctrl-b": "workspace::ToggleRightDock",
+      "ctrl-u": "editor::UndoSelection",
+      "ctrl-shift-l": "editor::SelectAllMatches",
+      "ctrl-k ctrl-c": ["editor::ToggleComments", { "advance_downwards": false }],
+      "ctrl-k ctrl-u": "editor::ToggleComments"
+    }
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
       "j j": "vim::SwitchToNormalMode",
-      "k k": "vim::SwitchToNormalMode",
-      "ctrl-c": "editor::Copy",
-      "ctrl-v": "editor::Paste"
+      "k k": "vim::SwitchToNormalMode"
     }
   },
   {
-    "context": "VimControl",
+    "context": "VimControl && !menu",
     "bindings": {
-      "ctrl-j": "terminal_panel::Toggle",
       "space w": "workspace::Save",
       "space q": "pane::CloseActiveItem",
-      "ctrl-c": "editor::Copy",
-      "ctrl-s": "workspace::Save",
-      "ctrl-v": "editor::Paste",
-      "ctrl-x": "editor::Cut",
-      "ctrl-f": "buffer_search::Deploy",
-      "ctrl-y": "editor::Redo",
-      "tab": "editor::Indent",
-      "shift-tab": "editor::Outdent",
+      "space f": "file_finder::Toggle",
       "space j": "pane::GoBack",
       "space k": "pane::GoForward",
-      "ctrl-a": "editor::SelectAll",
-      "g f": "editor::FindAllReferences"
-
-      // {
-      //             "before": ["leader", "j"],
-      //             "commands": ["workbench.action.navigateBack"]
-      //             // "after": ["<C-o>", "<Esc>"]
-      //         },
-      //         {
-      //             "before": ["leader", "k"],
-      //             "commands": ["workbench.action.navigateForward"]
-      //             // "after": ["<C-i>"]
-      //         }
+      "g f": "editor::FindAllReferences",
+      "tab": "editor::Indent",
+      "shift-tab": "editor::Outdent"
     }
   },
   {
-    "context": "vim_mode == normal",
+    "context": "vim_mode == normal && !menu",
     "bindings": {
-      "space c": "editor::ToggleComments"
+      "space c": "editor::ToggleComments",
+      "space v": "pane::SplitRight",
+      "space v d": "pane::SplitDown",
+      "space n t": "workspace::ToggleRightDock",
+      "space /": "project_search::ToggleFocus",
+      "space b": "editor::ToggleBreakpoint",
+      "space g i": "editor::ToggleCodeActions",
+      "space 0": "workspace::ToggleZoom",
+      "space p": ["workspace::SendKeystrokes", "%"],
+      "space (": ["workspace::SendKeystrokes", "v i ("],
+      "space {": ["workspace::SendKeystrokes", "v i {"],
+      "space [": ["workspace::SendKeystrokes", "v i ["],
+      "space \"": ["workspace::SendKeystrokes", "v i \""],
+      "space '": ["workspace::SendKeystrokes", "v i '"],
+      "space x": ["editor::InsertSnippet", { "snippet": " ✅" }],
+      ">": "command_palette::Toggle",
+      "s": "editor::Fold",
+      "shift-e": ["workspace::SendKeystrokes", "5 e"],
+      "shift-b": ["workspace::SendKeystrokes", "5 b"]
     }
   },
   {
     "context": "vim_mode == visual",
     "bindings": {
       "space c": "editor::ToggleComments",
-      "ctrl-c": "editor::Copy"
+      "shift-j": "editor::MoveLineDown",
+      "shift-k": "editor::MoveLineUp"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-j": "terminal_panel::Toggle",
+      "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
+      "ctrl-shift-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      "q": "vim::AnyQuotes",
+      "b": "vim::AnyBrackets"
     }
   }
 ]

@@ -331,6 +331,7 @@ window-rule {
 }
 
 // Always start kitty maximized so it behaves like a proper terminal.
+
 window-rule {
     match app-id=r#"kitty$"#
     open-maximized-to-edges true
@@ -353,6 +354,16 @@ window-rule {
 window-rule {
     match app-id=r#"Spotify$"#
     open-maximized-to-edges true
+}
+
+window-rule {
+    match app-id=r#"satty$"#
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"Emulator$"#
+    open-floating true
 }
 
 // Example: block out two password managers from screen capture.
@@ -464,6 +475,7 @@ binds {
     Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
     Mod+I              { focus-workspace-up; }
+
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
     Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
     Mod+Ctrl+U         { move-column-to-workspace-down; }
@@ -484,15 +496,15 @@ binds {
     // To avoid scrolling through workspaces really fast, you can use
     // the cooldown-ms property. The bind will be rate-limited to this value.
     // You can set a cooldown on any bind, but it's most useful for the wheel.
-    Mod+WheelScrollDown      cooldown-ms=100 { focus-workspace-down; }
-    Mod+WheelScrollUp        cooldown-ms=100 { focus-workspace-up; }
-    Mod+Ctrl+WheelScrollDown cooldown-ms=100 { move-column-to-workspace-down; }
-    Mod+Ctrl+WheelScrollUp   cooldown-ms=100 { move-column-to-workspace-up; }
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
 
-    Mod+WheelScrollRight      { focus-column-right; }
-    Mod+WheelScrollLeft       { focus-column-left; }
-    Mod+Ctrl+WheelScrollRight { move-column-right; }
-    Mod+Ctrl+WheelScrollLeft  { move-column-left; }
+    Mod+WheelScrollRight     cooldown-ms=150 { focus-column-right; }
+    Mod+WheelScrollLeft      cooldown-ms=150 { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight cooldown-ms=150 { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft cooldown-ms=15 { move-column-left; }
 
     // Usually scrolling up and down with Shift in applications results in
     // horizontal scrolling; these binds replicate that.
@@ -566,7 +578,7 @@ binds {
     // Mod+R { switch-preset-column-width-back; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
-    Mod+F { maximize-column; }
+    Mod+F { maximize-window-to-edges; }
     Mod+Shift+F { fullscreen-window; }
 
     // Expand the focused column to space not taken up by other fully visible columns.
@@ -613,7 +625,11 @@ binds {
     //Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
     Mod+Print { screenshot-window; }
-    Mod+Shift+S { screenshot; }
+    Super+Shift+S { screenshot; }
+
+    /*Super+Shift+S { spawn-sh "grim -g \"$(slurp -d)\" - | satty -f -"; }*/
+
+    
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
