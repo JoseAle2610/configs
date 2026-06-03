@@ -1,4 +1,7 @@
 {
+  "outline_panel": {
+    "dock": "left"
+  },
   "diff_view_style": "unified",
   "collaboration_panel": {
     "dock": "left"
@@ -27,6 +30,7 @@
   "buffer_font_size": 14,
   "ui_font_size": 14,
   "agent": {
+    "sidebar_side": "right",
     "dock": "left",
     "flexible": true,
     "default_model": {

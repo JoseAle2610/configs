@@ -39,10 +39,12 @@
     "bindings": {
       "space w": "workspace::Save",
       "space q": "pane::CloseActiveItem",
-      "space f": "file_finder::Toggle",
+      "space o b": "file_finder::Toggle",
       "space j": "pane::GoBack",
       "space k": "pane::GoForward",
-      "g f": "editor::FindAllReferences",
+      "g d": "editor::GoToDefinition",
+      "g i": "editor::GoToImplementation",
+      "g r": "editor::FindAllReferences",
       "tab": "editor::Indent",
       "shift-tab": "editor::Outdent"
     }
@@ -53,7 +55,10 @@
       "space c": "editor::ToggleComments",
       "space v": "pane::SplitRight",
       "space v d": "pane::SplitDown",
-      "space n t": "workspace::ToggleRightDock",
+      "space n t": "project_panel::ToggleFocus",
+      "space g": "git_panel::ToggleFocus",
+      "space n d": "debug_panel::ToggleFocus",
+      "space n a": "agent::ToggleFocus",
       "space /": "project_search::ToggleFocus",
       "space b": "editor::ToggleBreakpoint",
       "space g i": "editor::ToggleCodeActions",
@@ -85,6 +90,20 @@
       "ctrl-j": "terminal_panel::Toggle",
       "ctrl-p": ["terminal::SendKeystroke", "ctrl-p"],
       "ctrl-shift-t": "workspace::NewTerminal"
+    }
+  },
+  {
+    "context": "ProjectPanel && not_editing",
+    "bindings": {
+      "m a": "project_panel::NewFile",
+      "m d": "project_panel::Delete",
+      "m r": "project_panel::Rename",
+      "m c": "project_panel::Duplicate",
+      "m x": "project_panel::Cut",
+      "m p": "project_panel::Paste",
+      "m o": "editor::OpenContextMenu",
+      "g g": "menu::SelectFirst",
+      "shift-g": "menu::SelectLast"
     }
   },
   {

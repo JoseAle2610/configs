@@ -4,7 +4,7 @@
 " Find more examples here: https://jb.gg/share-ideavimrc
 
 " Source your .vimrc
-source ~/.vimrc
+"source ~/.vimrc
 
 "" -- Suggested options --
 " Show a few lines of context around the cursor.
@@ -30,13 +30,15 @@ imap kk <Esc>
 
 "" -- Leader key configuration --
 " Use space as leader key (same as Zed config)
-set mapleader=<Space>
+set mapleader=" "
+
+
 
 "" -- Map IDE actions to IdeaVim --
 
 " File operations
 map <leader>w <Action>(SaveAll)
-map <leader>q <Action>(CloseProject)
+map <leader>q <Action>(CloseTab)
 
 " Navigation
 map <C-p> <Action>(GotoFile)
