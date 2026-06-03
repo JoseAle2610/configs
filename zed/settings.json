@@ -1,9 +1,23 @@
 {
+  "auto_install_extensions": {
+    "dockerfile": true,
+    "git-firefly": true,
+    "groovy": true,
+    "html": true,
+    "java": true,
+    "kotlin": true,
+    "php": true,
+    "sql": true,
+    "toml": true,
+    "xml": true
+  },
+  "proxy": "",
   "outline_panel": {
     "dock": "left"
   },
   "diff_view_style": "unified",
   "collaboration_panel": {
+    "button": false,
     "dock": "left"
   },
   "cli_default_open_behavior": "existing_window",
@@ -74,6 +88,7 @@
     "font_size": 12.0
   },
   "git": {
+    "disable_git": false,
     "inline_blame": {
       "enabled": true
     }

@@ -71,7 +71,7 @@
       "space '": ["workspace::SendKeystrokes", "v i '"],
       "space x": ["editor::InsertSnippet", { "snippet": " ✅" }],
       ">": "command_palette::Toggle",
-      "s": "editor::Fold",
+      "s": "editor::ToggleFold",
       "shift-e": ["workspace::SendKeystrokes", "5 e"],
       "shift-b": ["workspace::SendKeystrokes", "5 b"]
     }
